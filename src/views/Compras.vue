@@ -3,6 +3,7 @@
         <div class="row justify-content-center">
             <!-- Columna de productos -->
             <div class="col-6">
+
                 <h2>Productos disponibles</h2>
                 <ul v-for="product in products" :key="product.id" class="mb-2">
                     <li class="product-item list-unstyled">
@@ -10,10 +11,11 @@
                         <span>{{ product.name }} - Precio: $ {{ product.price }}</span>
                         <div class="product-btn"> 
                             <button @click="addToCart(product)" class="btn btn-primary btn-sm ms-2">
-                                <i class="fas fa-cart-shopping" aria-hidden="true"></i>
+                                <img src="/icons/cart-shopping-solid.svg" alt="Carrito" style="width: 16px; height: 16px; margin-right: 3px; margin-bottom: 2px;" />                              
                                 
                                 Agregar al carrito
                             </button>
+                        
                         </div>
                     </li>
                 </ul>
@@ -28,7 +30,7 @@
                         <span>{{ item.product.name }} - {{ item.quantity }}</span>
                         <div class="cart-btn"> 
                             <button @click="removeFromCart(item)" class="btn btn-primary btn-sm ms-2">
-                                <i class="fas fa-trash" aria-hidden="true"></i>
+                                <img src="/icons/trash-solid.svg" alt="Remover" style="width: 15px; height: 15px; margin-right: 4px; margin-bottom: 3px;" />
                                 Remover del carrito
                             </button>
                                 
@@ -85,8 +87,10 @@
     </div>
 </template>
 
-<script>
+<script>    
+    
     export default {
+    
     data() {
         return {
             products: [
